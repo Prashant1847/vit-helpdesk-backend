@@ -16,7 +16,8 @@ const sessionMiddleware = session({
   }),
   cookie: {
     httpOnly: true,
-    // secure: process.env.CLIENT_URL?.startsWith('https'),
+    secure: process.env.CLIENT_URL?.startsWith('https'),
+    sameSite: 'none',
     maxAge: 30 * 60 * 1000 // 30 minutes
   }
 });
